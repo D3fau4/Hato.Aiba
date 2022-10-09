@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hato.Aiba", "Hato.Aiba\Hato.Aiba.csproj", "{C196835D-1355-4448-9D53-0273BC3D6C64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C196835D-1355-4448-9D53-0273BC3D6C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C196835D-1355-4448-9D53-0273BC3D6C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C196835D-1355-4448-9D53-0273BC3D6C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C196835D-1355-4448-9D53-0273BC3D6C64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
