@@ -39,6 +39,12 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine">
+          <HintPath>D:\SteamLibrary\steamapps\common\AI The Somnium Files\AI_TheSomniumFiles_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>D:\SteamLibrary\steamapps\common\AI The Somnium Files\AI_TheSomniumFiles_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="NodeTextEnabler.cs" />
