@@ -47,7 +47,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="NodeTextEnabler.cs" />
+        <Compile Include="TextMod.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

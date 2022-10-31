@@ -37,4 +37,4 @@ using MelonLoader;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 // MOD
-[assembly: MelonInfo(typeof(NodeTextEnabler), "Aiba", "1.0.0", "D3fau4")]
+[assembly: MelonInfo(typeof(TextMod), "Aiba", "1.0.0", "D3fau4")]

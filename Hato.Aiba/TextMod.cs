@@ -4,17 +4,17 @@ using UnityEngine.SceneManagement;
 
 namespace Hato.Aiba
 {
-    public class NodeTextEnabler : MelonMod
+    public class TextMod : MelonMod
     {
         public override void OnInitializeMelon()
         {
-            Melon<NodeTextEnabler>.Logger.Msg("Aiba cargada!");
+            Melon<TextMod>.Logger.Msg("Aiba cargada!");
         }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
             base.OnSceneWasLoaded(buildIndex, sceneName);
-            Melon<NodeTextEnabler>.Logger.Msg($"Se ha cargado la scena: {sceneName}");
+            Melon<TextMod>.Logger.Msg($"Se ha cargado la scena: {sceneName}");
         }
 
         public override void OnUpdate()
