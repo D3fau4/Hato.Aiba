@@ -39,11 +39,17 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="TextMeshPro-2017.3-Runtime">
+          <HintPath>Dlls\TextMeshPro-2017.3-Runtime.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine">
-          <HintPath>D:\SteamLibrary\steamapps\common\AI The Somnium Files\AI_TheSomniumFiles_Data\Managed\UnityEngine.dll</HintPath>
+          <HintPath>Dlls\UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>D:\SteamLibrary\steamapps\common\AI The Somnium Files\AI_TheSomniumFiles_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>Dlls\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+          <HintPath>Dlls\UnityEngine.UI.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
