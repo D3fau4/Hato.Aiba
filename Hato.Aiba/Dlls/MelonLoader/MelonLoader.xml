@@ -82,6 +82,11 @@
             Version of the Melon.
             </summary>
         </member>
+        <member name="P:MelonLoader.MelonInfoAttribute.SemanticVersion">
+            <summary>
+            Semantic Version of the Melon. Will be null if Version is not using the <see href="https://semver.org">Semantic Versioning</see> format.
+            </summary>
+        </member>
         <member name="P:MelonLoader.MelonInfoAttribute.Author">
             <summary>
             Author of the Melon.
@@ -94,11 +99,36 @@
         </member>
         <member name="M:MelonLoader.MelonInfoAttribute.#ctor(System.Type,System.String,System.String,System.String,System.String)">
             <summary>
-            Main MelonInfo constructor.
+            MelonInfo constructor.
             </summary>
             <param name="type">The main Melon type of the Melon (for example TestMod)</param>
             <param name="name">Name of the Melon</param>
-            <param name="version">Version of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="version">Version of the Melon</param>
+            <param name="author">Author of the Melon</param>
+            <param name="downloadLink">URL to the download link of the mod [optional]</param>
+        </member>
+        <member name="M:MelonLoader.MelonInfoAttribute.#ctor(System.Type,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            MelonInfo constructor.
+            </summary>
+            <param name="type">The main Melon type of the Melon (for example TestMod)</param>
+            <param name="name">Name of the Melon</param>
+            <param name="versionMajor">Version Major of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="versionMinor">Version Minor of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="versionRevision">Version Revision of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="versionIdentifier">Version Identifier of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="author">Author of the Melon</param>
+            <param name="downloadLink">URL to the download link of the mod [optional]</param>
+        </member>
+        <member name="M:MelonLoader.MelonInfoAttribute.#ctor(System.Type,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            MelonInfo constructor.
+            </summary>
+            <param name="type">The main Melon type of the Melon (for example TestMod)</param>
+            <param name="name">Name of the Melon</param>
+            <param name="versionMajor">Version Major of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="versionMinor">Version Minor of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
+            <param name="versionRevision">Version Revision of the Melon (Using the <see href="https://semver.org">Semantic Versioning</see> format)</param>
             <param name="author">Author of the Melon</param>
             <param name="downloadLink">URL to the download link of the mod [optional]</param>
         </member>
@@ -320,11 +350,6 @@
         <member name="F:MelonLoader.MelonEvents.OnPreModsLoaded">
             <summary>
             Called before MelonMods are loaded from the Mods folder.
-            </summary>
-        </member>
-        <member name="F:MelonLoader.MelonEvents.BONEWORKS_OnLoadingScreen">
-            <summary>
-            Called when BONEWORKS shows the Loading Screen. Only runs if the Melon is used in BONEWORKS.
             </summary>
         </member>
         <member name="F:MelonLoader.MelonAssembly.OnAssemblyResolving">

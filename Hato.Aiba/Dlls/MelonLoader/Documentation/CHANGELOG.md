@@ -1,5 +1,6 @@
 | Versions: |
 | - |
+| [v0.5.7](#v057) |
 | [v0.5.5](#v055) |
 | [v0.5.4](#v054) |
 | [v0.5.3](#v053) | 
@@ -27,6 +28,28 @@
 | [v0.0.3](#v003) |
 | [v0.0.2](#v002) |
 | [v0.0.1](#v001) |
+
+---
+
+### v0.5.7:
+
+1. Fixed the MelonEvent registration sorting.   (Credits to [SlidyDev](https://github.com/SlidyDev) :D)
+2. Inverted the MelonEvent priority sorting system to match the MelonPriorityAttribute.   (Credits to [SlidyDev](https://github.com/SlidyDev) :D)
+3. Updated Start Screen Signatures.     (Credits to [Slaynash](https://github.com/Slaynash) :3)
+4. Fixed Start Screen Issues with UnityInternals.runtime_class_init.
+5. Updated Class Data TPK.     (Credits to [ds5678](https://github.com/ds5678) :D)
+6. Updated [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) to v2022.1.0-pre-release.8.
+7. Added Launch Option Logging.
+8. Added new MelonInfo constructors.
+9. Setup Compatibility Layer for BONEWORKS and BONELAB.
+10. Made Game Specific Compatibility Layers load agnostically.
+11. Fixed race condition issue with multiple concurrent scene loads.
+12. Removed BONEWORKS_OnLoadingScreen MelonMod override and MelonEvent.
+13. Added Auto-Resolver for OnLoadingScreen MelonMod methods.
+14. Rewrote ServerCertificateValidation Fix to use Reflection.
+15. Separated Melon Harmony Initialization from OnApplicationStart events.
+16. Fixed issue with MelonInfo Semver Constructors being inaccessable.
+17. Added LemonTuple Constructors.
 
 ---
 
