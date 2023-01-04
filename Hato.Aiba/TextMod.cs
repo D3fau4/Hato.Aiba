@@ -1,4 +1,5 @@
-﻿using MelonLoader;
+﻿using System.Collections.Generic;
+using MelonLoader;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Hato.Aiba
 {
     public class TextMod : MelonMod
     {
+        private readonly List<string> scenesloaded = new List<string>();
         private string Lastestloaded { get; set; }
         private bool Isalreadymoded { get; set; }
 
@@ -19,7 +21,15 @@ namespace Hato.Aiba
             base.OnSceneWasLoaded(buildIndex, sceneName);
             Lastestloaded = sceneName;
             Isalreadymoded = false;
+            scenesloaded.Add(sceneName);
             Melon<TextMod>.Logger.Msg($"Se ha cargado la scena: {sceneName}");
+        }
+
+        public override void OnSceneWasUnloaded(int buildIndex, string sceneName)
+        {
+            base.OnSceneWasUnloaded(buildIndex, sceneName);
+            if (scenesloaded.Contains(sceneName))
+                scenesloaded.Remove(sceneName);
         }
 
         /*IEnumerator SearchAndReplaceText(string gameobjectname, string text, float xdiff = 0, float ydiff = 0, float zdiff = 0)
@@ -173,6 +183,34 @@ namespace Hato.Aiba
                     }
 
                     break;
+            }
+
+            if (scenesloaded.Contains("Somnium"))
+            {
+                var retrytext = GameObject.Find("ResetDialog/Window/Title");
+                var life1 = GameObject.Find("ResetDialog/Window/Title/Life1");
+                var life2 = GameObject.Find("ResetDialog/Window/Title/Life2");
+                var life3 = GameObject.Find("ResetDialog/Window/Title/Life3");
+
+                if (retrytext != null)
+                {
+                    var tmptext = retrytext.GetComponent<TMP_Text>();
+                    tmptext.SetText("Reintentar");
+                    tmptext.fontSize = 46;
+                    retrytext.transform.position = new Vector3(-1.1842f, 2.85f, -9.64f);
+                }
+
+                if (life1 != null && life2 != null && life3 != null)
+                {
+                    life1.transform.position = new Vector3(life1.transform.position.x + 0.7778f,
+                        life1.transform.position.y, life1.transform.position.z);
+                    life2.transform.position = new Vector3(life2.transform.position.x + 0.7778f,
+                        life2.transform.position.y, life2.transform.position.z);
+                    life3.transform.position = new Vector3(life3.transform.position.x + 0.7778f,
+                        life3.transform.position.y, life3.transform.position.z);
+                    scenesloaded.Remove("Somnium");
+                    Melon<TextMod>.Logger.Msg("Mods de somniums cargados");
+                }
             }
         }
     }
