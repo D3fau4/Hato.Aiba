@@ -164,6 +164,15 @@ namespace Hato.Aiba
 
                     break;
                 }
+                case "LanguageSelect":
+                    var TextLanguageUS = GameObject.Find("TextLanguage-us");
+                    if (TextLanguageUS != null)
+                    {
+                        var tmptext = TextLanguageUS.GetComponent<TMP_Text>();
+                        tmptext.SetText("<align=center>Español</align>");
+                    }
+
+                    break;
             }
         }
     }
