@@ -188,13 +188,19 @@ namespace Hato.Aiba
 
                 if (life1 != null && life2 != null && life3 != null)
                 {
-                    life1.transform.position = new Vector3(life1.transform.position.x + 0.7778f,
-                        life1.transform.position.y, life1.transform.position.z);
-                    life2.transform.position = new Vector3(life2.transform.position.x + 0.7778f,
-                        life2.transform.position.y, life2.transform.position.z);
-                    life3.transform.position = new Vector3(life3.transform.position.x + 0.7778f,
-                        life3.transform.position.y, life3.transform.position.z);
-                    scenesloaded.Remove("Somnium");
+                    Melon<TextMod>.Logger.Msg($"life1: {life1.transform.position}");
+                    Melon<TextMod>.Logger.Msg($"life2: {life2.transform.position}");
+                    Melon<TextMod>.Logger.Msg($"life3: {life3.transform.position}");
+                    
+                    life1.transform.position = new Vector3(0.7f, 2.9f, -9.6f);
+                    life2.transform.position = new Vector3(1.5f, 2.9f, -9.6f);
+                    life3.transform.position = new Vector3(2.3f, 2.9f, -9.6f);
+                    
+                    Melon<TextMod>.Logger.Msg($"life1: {life1.transform.position}");
+                    Melon<TextMod>.Logger.Msg($"life2: {life2.transform.position}");
+                    Melon<TextMod>.Logger.Msg($"life3: {life3.transform.position}");
+                    
+                    //scenesloaded.Remove("Somnium");
                     Melon<TextMod>.Logger.Msg("Mods de somniums cargados");
                 }
             }
