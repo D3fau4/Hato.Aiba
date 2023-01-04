@@ -32,20 +32,6 @@ namespace Hato.Aiba
                 scenesloaded.Remove(sceneName);
         }
 
-        /*IEnumerator SearchAndReplaceText(string gameobjectname, string text, float xdiff = 0, float ydiff = 0, float zdiff = 0)
-        {
-            var gameObject = GameObject.Find(gameobjectname);
-            var tmptext = gameObject.GetComponent<TMP_Text>();
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x - 14f,
-                gameObject.transform.position.y, gameObject.transform.position.z);
-            tmptext.SetText("AUTOGUARDADO");
-            yield return null;
-        }*/
-
-        public void resetmods()
-        {
-        }
-
         public override void OnUpdate()
         {
             switch (Lastestloaded)
