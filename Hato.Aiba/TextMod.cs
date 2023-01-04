@@ -177,31 +177,27 @@ namespace Hato.Aiba
                 var life1 = GameObject.Find("ResetDialog/Window/Title/Life1");
                 var life2 = GameObject.Find("ResetDialog/Window/Title/Life2");
                 var life3 = GameObject.Find("ResetDialog/Window/Title/Life3");
-
+                var mapname = GameObject.Find("Windows/Map/MapName/name_base/Text");
+                
                 if (retrytext != null)
                 {
                     var tmptext = retrytext.GetComponent<TMP_Text>();
-                    tmptext.SetText("Reintentar");
+                    tmptext.SetText("Repetir");
                     tmptext.fontSize = 46;
                     retrytext.transform.position = new Vector3(-1.1842f, 2.85f, -9.64f);
                 }
 
                 if (life1 != null && life2 != null && life3 != null)
                 {
-                    Melon<TextMod>.Logger.Msg($"life1: {life1.transform.position}");
-                    Melon<TextMod>.Logger.Msg($"life2: {life2.transform.position}");
-                    Melon<TextMod>.Logger.Msg($"life3: {life3.transform.position}");
-                    
                     life1.transform.position = new Vector3(0.7f, 2.9f, -9.6f);
                     life2.transform.position = new Vector3(1.5f, 2.9f, -9.6f);
                     life3.transform.position = new Vector3(2.3f, 2.9f, -9.6f);
-                    
-                    Melon<TextMod>.Logger.Msg($"life1: {life1.transform.position}");
-                    Melon<TextMod>.Logger.Msg($"life2: {life2.transform.position}");
-                    Melon<TextMod>.Logger.Msg($"life3: {life3.transform.position}");
-                    
-                    //scenesloaded.Remove("Somnium");
-                    Melon<TextMod>.Logger.Msg("Mods de somniums cargados");
+                }
+
+                if (mapname != null)
+                {
+                    var mapnametmp = mapname.GetComponent<TMP_Text>();
+                    mapnametmp.fontSize = 34;
                 }
             }
         }
