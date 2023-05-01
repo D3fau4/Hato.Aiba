@@ -200,6 +200,18 @@ namespace Hato.Aiba
                     mapnametmp.fontSize = 34;
                 }
             }
+
+            if (scenesloaded.Contains("flowchart"))
+            {
+                {
+                    var a = GameObject.Find("Canvas/ScreenScaler/locked/Text");
+                    TMP_Text b = a.GetComponent<TMP_Text>();
+                    b.SetText("CERRADO");
+                    a = GameObject.Find("Canvas/ScreenScaler/unlocked/Text00");
+                    b = a.GetComponent<TMP_Text>();
+                    b.SetText("ABIERTO");
+                }
+            }
         }
     }
 }
