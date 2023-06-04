@@ -203,14 +203,44 @@ namespace Hato.Aiba
 
             if (scenesloaded.Contains("flowchart"))
             {
-                {
-                    var a = GameObject.Find("Canvas/ScreenScaler/locked/Text");
-                    TMP_Text b = a.GetComponent<TMP_Text>();
-                    b.SetText("CERRADO");
-                    a = GameObject.Find("Canvas/ScreenScaler/unlocked/Text00");
-                    b = a.GetComponent<TMP_Text>();
-                    b.SetText("ABIERTO");
-                }
+                
+                    var gameobject_unlock = GameObject.Find("Canvas/ScreenScaler/locked/Text");
+                    if (gameobject_unlock != null)
+                    {
+                        
+                        var b = gameobject_unlock.GetComponent<TMP_Text>();
+                        b.SetText("ABIERTO");
+                    }
+                    else
+                    {
+                        Melon<TextMod>.Logger.Msg("No se ha encontrado: Canvas/ScreenScaler/locked/Text");
+                    }
+
+                    gameobject_unlock = GameObject.Find("Canvas/ScreenScaler/unlocked/Text00");
+                    if (gameobject_unlock != null)
+                    {
+                        
+                        var b = gameobject_unlock.GetComponent<TMP_Text>();
+                        b = gameobject_unlock.GetComponent<TMP_Text>();
+                        b.SetText("CERRADO");
+                    }
+                    else
+                    {
+                        Melon<TextMod>.Logger.Msg("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
+                    }
+                    
+                    gameobject_unlock = GameObject.Find("Canvas/ScreenScaler/unlocked/Text");
+                    if (gameobject_unlock != null)
+                    {
+                        
+                        var b = gameobject_unlock.GetComponent<TMP_Text>();
+                        b = gameobject_unlock.GetComponent<TMP_Text>();
+                        b.SetText("ABIERTO");
+                    }
+                    else
+                    {
+                        Melon<TextMod>.Logger.Msg("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
+                    }
             }
         }
     }
