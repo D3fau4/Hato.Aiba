@@ -2,6 +2,7 @@
 using MelonLoader;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Hato.Aiba
 {
@@ -10,6 +11,7 @@ namespace Hato.Aiba
         private readonly List<string> scenesloaded = new List<string>();
         private string Lastestloaded { get; set; }
         private bool Isalreadymoded { get; set; }
+        private readonly int MAX_UI = 7;
 
         public override void OnInitializeMelon()
         {
@@ -213,7 +215,7 @@ namespace Hato.Aiba
                     }
                     else
                     {
-                        Melon<TextMod>.Logger.Msg("No se ha encontrado: Canvas/ScreenScaler/locked/Text");
+                        Melon<TextMod>.Logger.Error("No se ha encontrado: Canvas/ScreenScaler/locked/Text");
                     }
 
                     gameobject_unlock = GameObject.Find("Canvas/ScreenScaler/unlocked/Text00");
@@ -226,7 +228,7 @@ namespace Hato.Aiba
                     }
                     else
                     {
-                        Melon<TextMod>.Logger.Msg("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
+                        Melon<TextMod>.Logger.Error("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
                     }
                     
                     gameobject_unlock = GameObject.Find("Canvas/ScreenScaler/unlocked/Text");
@@ -239,8 +241,31 @@ namespace Hato.Aiba
                     }
                     else
                     {
-                        Melon<TextMod>.Logger.Msg("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
+                        Melon<TextMod>.Logger.Error("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
                     }
+            }
+
+            if (scenesloaded.Contains("OptionMenu"))
+            {
+                for (int i = 0; i <= MAX_UI; i++)
+                {
+                    var gameobject_title = GameObject.Find($"ContentsCanvas/JumpMenu/Temp/ui_option_icon0{i}/Text/Text1");
+                    if (gameobject_title != null)
+                    {
+                        Image title = gameobject_title.GetComponent<Image>();
+                        title.SetNativeSize();
+                        title.enabled = true;
+                        for (int j = 0; j < gameobject_title.transform.childCount; j++)
+                        {
+                            gameobject_title.transform.GetChild(j).gameObject.SetActive(false);
+                        }
+                    }
+                    else
+                    {
+                        Melon<TextMod>.Logger.Error(
+                            $"No se ha podido encontrar el componente de {$"ContentsCanvas/JumpMenu/Temp/ui_option_icon0{i}/Text/Text1"}");
+                    }
+                }
             }
         }
     }
