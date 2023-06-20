@@ -211,7 +211,10 @@ namespace Hato.Aiba
                     {
                         
                         var b = gameobject_unlock.GetComponent<TMP_Text>();
-                        b.SetText("ABIERTO");
+                        if(b.text.ToLower().Contains("unlocked") || b.text.Contains("ABIERTO"))
+                            b.SetText("ABIERTO");
+                        else
+                            b.SetText("CERRADO");
                     }
                     else
                     {
@@ -223,12 +226,14 @@ namespace Hato.Aiba
                     {
                         
                         var b = gameobject_unlock.GetComponent<TMP_Text>();
-                        b = gameobject_unlock.GetComponent<TMP_Text>();
-                        b.SetText("CERRADO");
+                        if(b.text.ToLower().Contains("unlocked") || b.text.Contains("ABIERTO"))
+                            b.SetText("ABIERTO");
+                        else
+                            b.SetText("CERRADO");
                     }
                     else
                     {
-                        Melon<TextMod>.Logger.Error("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text");
+                        Melon<TextMod>.Logger.Error("No se ha encontrado: Canvas/ScreenScaler/unlocked/Text00");
                     }
                     
                     gameobject_unlock = GameObject.Find("Canvas/ScreenScaler/unlocked/Text");
@@ -236,8 +241,10 @@ namespace Hato.Aiba
                     {
                         
                         var b = gameobject_unlock.GetComponent<TMP_Text>();
-                        b = gameobject_unlock.GetComponent<TMP_Text>();
-                        b.SetText("ABIERTO");
+                        if(b.text.ToLower().Contains("locked") || b.text.Contains("CERRADO"))
+                            b.SetText("ABIERTO");
+                        else
+                            b.SetText("CERRADO");
                     }
                     else
                     {
